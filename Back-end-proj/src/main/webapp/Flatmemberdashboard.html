@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flat Member Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">🏢 Pending Visitor Requests</h2>
+    <div id="visitorList" class="row justify-content-center">
+        <div class="text-center">Loading requests...</div>
+    </div>
+</div>
+
+<script>
+    const flat = prompt("Enter your flat number:");
+    const mobile = prompt("Enter your mobile number:");
+
+    fetch(`/Back-end-proj/getPendingVisitors?flat=${flat}&mobile=${mobile}`)
+        .then(res => res.json())
+        .then(data => {
+            let html = "";
+
+            if (data.length === 0) {
+                html = `<div class="alert alert-info text-center">No pending visitor requests.</div>`;
+            } else {
+                data.forEach(v => {
+                    html += `
+                        <div class="col-md-8 mb-3">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">${v.fullname}</h5>
+                                    <p class="card-text">Purpose: ${v.purpose}</p>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="/Back-end-proj/approveVisitor?id=${v.id}&decision=approved" class="btn btn-success">✅ Approve</a>
+                                        <a href="/Back-end-proj/approveVisitor?id=${v.id}&decision=rejected" class="btn btn-danger">❌ Reject</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            document.getElementById("visitorList").innerHTML = html;
+        })
+        .catch(err => {
+            document.getElementById("visitorList").innerHTML = `
+                <div class="alert alert-danger text-center">Something went wrong. Try again later.</div>`;
+            console.error(err);
+        });
+</script>
+
+<!-- Optional: Bootstrap JS (for components) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

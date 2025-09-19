@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visitor Entry Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar-custom {
+     background-color: #005792; 
+    }
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+      color: #fff !important;
+    }
+
+     .navbar-custom .nav-link:hover {
+     color: #ffd700 !important; 
+     }
+
+    .hero-section {
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      padding-top: 80px;
+      padding-bottom: 60px;
+      backdrop-filter: brightness(0.9);
+    }
+
+    .card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .category-card {
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: scale(1.05);
+    }
+
+    .category-img {
+      height: 80px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Visitor Entry System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+       
+        <li class="nav-item">
+          <a class="nav-link" href="Registration.html">Registraion</a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link active" href="UserLogin.html">User Login</a>
+        </li>
+        
+        
+          <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact Us</a>
+        </li>
+        
+        
+       <li class="nav-item">
+        <!-- <select class="form-select w-25 ll" onchange="location = this.value;">
+        <option value="Adminlogin.html">Admin Login</option>
+        <option value="Flatmemberdashboard.html">Flat Login</option>
+        </select> -->
+        <a class="nav-link" href="Adminlogin.html">Admin Login</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="Flatmemberdashboard.html">Flat Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+  <div class="hero-section d-flex flex-column justify-content-center align-items-center text-white">
+    <div class="container text-center">
+      <h1 class="fw-bold mb-5">Select Visitor Type</h1>
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-md-3">
+          <a href="UserLogin.html" onclick="alert('Login in to start')">
+            <div class="card text-center p-3 category-card shadow">
+              <img src="https://cdn-icons-png.flaticon.com/512/2331/2331943.png" alt="Delivery" class="category-img mx-auto">
+              <h5 class="mt-3">Delivery</h5>
+            </div>
+          </a>
+        </div>
+
+        
+        <div class="col-md-3">
+          <a href="UserLogin.html" onclick="alert('Login in to start')">
+            <div class="card text-center p-3 category-card shadow">
+              <img src="https://cdn-icons-png.flaticon.com/512/219/219970.png" alt="Guest" class="category-img mx-auto">
+              <h5 class="mt-3">Guest</h5>
+            </div>
+          </a>
+        </div>
+
+        
+        <div class="col-md-3">
+          <a href="UserLogin.html" onclick="alert('Login in to start')">
+            <div class="card text-center p-3 category-card shadow">
+              <img src="https://cdn-icons-png.flaticon.com/512/2784/2784445.png" alt="Housekeeping" class="category-img mx-auto">
+              <h5 class="mt-3">Housekeeping</h5>
+            </div>
+          </a>
+        </div>
+
+        
+        <div class="col-md-3">
+          <a href="UserLogin.html" onclick="alert('Login in to start')">
+            <div class="card text-center p-3 category-card shadow">
+              <img src="https://cdn-icons-png.flaticon.com/512/3011/3011270.png" alt="Housewife" class="category-img mx-auto">
+              <h5 class="mt-3">Housewife</h5>
+            </div>
+          </a>
+        </div>
+
+        
+        <div class="col-md-3">
+          <a href="UserLogin.html" onclick="alert('Login in to start')">
+            <div class="card text-center p-3 category-card shadow">
+              <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Others" class="category-img mx-auto">
+              <h5 class="mt-3">Others</h5>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+<section class="bg-white text-dark py-5 " id="about">
+  <div class="container">
+    <h2 class="text-center mb-4">About This Project</h2>
+    <p class="lead text-center" style="max-width: 800px; margin: 0 auto;">
+      This Visitor Entry System is designed to manage and track all types of visitor entries in residential societies or apartments. 
+      It provides a simple and user-friendly interface for different visitor categories such as Delivery Personnel, Guests, Housekeeping Staff, Housewives, and Others. 
+      The system aims to improve security, maintain digital records, and reduce manual entry errors. 
+      In the future, it can be connected to a backend system for real-time storage, reporting, and verification.
+    </p>
+  </div>
+</section>
+
+<section class="bg-light py-5 " id="contact">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+
+        <form class="bg-white p-4 rounded shadow" action="contactusservlet" method="get">
+        
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="input1" required />
+          </div>
+
+         
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" name="input2" required />
+          </div>
+
+         
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Type your message here..." name="input3" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
